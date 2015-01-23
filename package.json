@@ -1,0 +1,31 @@
+{
+  "name": "jam3-testing-tools",
+  "version": "1.0.0",
+  "description": "a brief intro to testing tools",
+  "main": "README.md",
+  "license": "MIT",
+  "author": {
+    "name": "Matt DesLauriers",
+    "email": "dave.des@gmail.com",
+    "url": "https://github.com/mattdesl"
+  },
+  "dependencies": {},
+  "private": true,
+  "devDependencies": {},
+  "scripts": {},
+  "keywords": [
+    "jam3",
+    "lessons",
+    "test",
+    "guide",
+    "help"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Jam3/jam3-testing-tools.git"
+  },
+  "homepage": "https://github.com/Jam3/jam3-testing-tools",
+  "bugs": {
+    "url": "https://github.com/Jam3/jam3-testing-tools/issues"
+  }
+}
