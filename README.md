@@ -2,6 +2,16 @@
 
 This is a brief introduction to some common practices when it comes to testing modules, and *test-driven development.* The goal is to test *while* you develop the module, so that you end up with a test for each feature you've added. 
 
+## contents
+
+- [global tools](#global-tools)
+- [tape](#tape)
+- [nodemon](#nodemon)
+- [beefy](#beefy)
+- [smokestack](#smokestack)
+- [pretty-printing](#pretty-printing)
+- [alternatives](#alternatives)
+
 ## global tools
 
 The first step is to install some global tools that we will use for testing and development. Usually it's recommended to install these tools locally (per-module), but we will get to that a bit later. For now, global tools help us get up and running a bit quicker.
@@ -124,6 +134,8 @@ Now when we run `npm test` it will run the tests in a browser and print the resu
 You may also be interested in [testling](https://www.npmjs.com/package/testling) which has similar goals, except focuses more on PhantomJS (i.e. runs heedlessly but doesn't support full range of browser capabilities). 
 
 ## pretty-printing
+
+![img](http://i.imgur.com/bROGMVq.png)
 
 We can use [faucet](https://www.npmjs.com/package/faucet) or [tap-spec](https://www.npmjs.com/package/tap-spec) to pretty-print the test results, making them coloured and more compact. Example: 
 
