@@ -72,7 +72,7 @@ test('converts rgb colors to hsl', function(t) {
 
 ## beefy
 
-The above `nodemon` tool won't work with browser code. If we're making a browser-specific module (like [prefix-style](https://github.com/mattdesl/prefix-style)) we can do some development with Beefy using the following command:
+The above `nodemon` tool won't work with browser code. If we're making a browser-specific module (like [dom-css](https://github.com/mattdesl/dom-css)) we can do some development with Beefy using the following command:
 
 ```sh
 #run beefy and open the browser
