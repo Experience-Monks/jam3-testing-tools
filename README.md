@@ -97,6 +97,8 @@ Local tools are run via `npm-scripts` (it will look inside `node_modules` first)
   }
 ```
 
+Now running `npm test` will open beefy. 
+
 ## smokestack
 
 Although Beefy is pretty good, it would be better if we could automate our tests and eventually have them running in the cloud (like with [zuul](https://github.com/defunctzombie/zuul) and SauceLabs). It can also be tedious to have to open DevTools just to see the test results. 
