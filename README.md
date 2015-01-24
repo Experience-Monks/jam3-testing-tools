@@ -1,6 +1,6 @@
 # jam3-testing-tools
 
-This is a brief introduction to some common practices when it comes to testing modules, and *test-driven development.* The goal is to test *while* you develop the module, so that you end up with a test for each feature you've added. 
+This is a brief introduction to some common practices when it comes to testing frontend modules, and *test-driven development.* The goal is to test *while* you develop the module, so that you end up with a test for each feature you've added. 
 
 ## contents
 
@@ -18,7 +18,7 @@ The first step is to install some global tools that we will use for testing and 
 
 ```sh
 # installs some global tools
-npm install beefy nodemon browserify faucet -g
+npm i beefy nodemon browserify faucet -g
 ```
 
 <sup>*TIP* - `npm i` is shorthand for `npm install`</sup>
@@ -27,7 +27,7 @@ npm install beefy nodemon browserify faucet -g
 
 Many modules are generic and not tied specifically to NodeJS or the browser. For example, a `rgb-to-hsl` color conversion module does not need to rely on the DOM or on any OS-level features. For these modules we can use [tape](https://www.npmjs.com/package/tape), which works in Node and the browser.
 
-First, stub out a `test.js` file. If you plan to have many tests and assets, you might want to put this in a `tests` folder. If you've used [module-generator](https://github.com/Jam3/Jam3Lessons/wiki/Making-Modules) then this should be stubbed out for you.
+First, stub out a `test.js` file. If you plan to have many tests and assets, you might want to put this in a `tests` folder. Some tools like [module-generator](https://www.npmjs.com/package/module-generator) might already stub this out for you.
 
 ```js
 var rgb2hsl = require('./')
@@ -39,7 +39,7 @@ test('converts rgb colors to hsl', function(t) {
 })
 ```
 
-Then, you can update the `scripts` field of your `package.json`. This should already be done if you generated the module properly.
+Then, you can update the `scripts` field of your `package.json`. This might already be done if you used a module generator. 
 
 ```json
   "scripts": {
@@ -47,11 +47,11 @@ Then, you can update the `scripts` field of your `package.json`. This should alr
   }
 ```
 
-You can now test the module with `npm test` (alias for `npm run test`).
+You can now test the module with `npm test` (alias for `npm run test`), or just running `node test.js`.
 
 ## nodemon
 
-When we are working with generic Node/Browser code (like `rgb-to-hsl`), it's usually easier to develop it in a terminal. During development, we can use [nodemon](https://www.npmjs.com/package/nodemon) to live-reload the tests. The process looks like this:
+When working with a generic module like `rgb-to-hsl`, it's usually faster to develop it in a terminal than to set up HTML and a browser. During development, we can use [nodemon](https://www.npmjs.com/package/nodemon) to live-reload the test file. The process looks like this:
 
 ```sh
 # start listening to our test.js file
@@ -82,7 +82,7 @@ test('converts rgb colors to hsl', function(t) {
 
 ## beefy
 
-The above `nodemon` tool won't work with browser code. If we're making a browser-specific module (like [dom-css](https://github.com/mattdesl/dom-css)) we can do some development with Beefy using the following command:
+The above `nodemon` tool won't work with browser code. If we're making a browser-specific module (like [dom-css](https://github.com/mattdesl/dom-css)) we can do some initial development with [beefy](https://www.npmjs.com/package/beefy) using the following command:
 
 ```sh
 #run beefy and open the browser
@@ -91,7 +91,7 @@ beefy test --open
 
 <sup>*TIP* - `beefy foo` is shorthand for `beefy foo.js`</sup>
 
-This should serve the file at `localhost:9966`. Now you can save the `test.js` file and reload the browser to see the results in the console. Beefy is useful for quick development, and for modules that are harder to automate (like WebGL code, user interactions, etc). 
+This will serve the file at `localhost:9966`. Now you can save the `test.js` file and reload the browser to see the results in the console. Beefy is useful for rapid prototyping, and modules that are harder to automate (like WebGL code, user interactions, etc). It's also a good way to deliver [demo / example code](https://github.com/mattdesl/gl-sprite-text/blob/4391360417ce3416b87b602155847e5785dc40a3/package.json#L46-L47) to the user.
 
 It's typically a good idea to save these tools locally, so that anybody cloning your repo is running the same versions you are. 
 
@@ -99,7 +99,7 @@ It's typically a good idea to save these tools locally, so that anybody cloning 
 npm install beefy browserify --save-dev
 ```
 
-Local tools are run via `npm-scripts` (it will look inside `node_modules` first). So now your package.json looks like this:
+Users cloning the repo won't be able to run `beefy test.js` from terminal. Instead, locally-installed tools are run via `npm-scripts` (it first looks inside `node_modules`). So now your package.json looks like this:
 
 ```json
   "scripts": {
@@ -111,7 +111,7 @@ Now running `npm test` will open beefy.
 
 ## smokestack
 
-Although Beefy is pretty good, it would be better if we could automate our tests and eventually have them running in the cloud (like with [zuul](https://github.com/defunctzombie/zuul) and SauceLabs). It can also be tedious to have to open DevTools just to see the test results. 
+Although beefy is pretty good, it would be better if we could automate our tests and eventually have them running in the cloud (like with [zuul](https://github.com/defunctzombie/zuul) and SauceLabs). It can also be tedious to have to open DevTools just to see the test results. 
 
 One alternative to beefy is to use [smokestack](https://www.npmjs.com/package/smokestack) for automation. This launches Chrome or FireFox, so it allows us to test the full range of Web APIs (WebGL, WebAudio, etc).
 
