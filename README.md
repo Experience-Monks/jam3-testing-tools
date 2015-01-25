@@ -91,7 +91,7 @@ beefy test --open
 
 <sup>*TIP* - `beefy foo` is shorthand for `beefy foo.js`</sup>
 
-This will serve the file at `localhost:9966`. Now you can save the `test.js` file and reload the browser to see the results in the console. Beefy is useful for rapid prototyping, and modules that are harder to automate (like WebGL code, user interactions, etc). It's also a good way to deliver [demo / example code](https://github.com/mattdesl/gl-sprite-text/blob/4391360417ce3416b87b602155847e5785dc40a3/package.json#L46-L47) to the user.
+This will serve the file at `localhost:9966`. Now you can save the `test.js` file and reload the browser to see the results in the console. Beefy is useful for rapid prototyping, and modules that are harder to automate (like WebGL code, user interactions, etc). It's also a good way to deliver [demo / example code](https://github.com/Jam3/delaunify/blob/e83a2118df8e1fc7f5dc03311d288fc8dc3b8cb6/package.json#L27) to the user.
 
 It's typically a good idea to save these tools locally, so that anybody cloning your repo is running the same versions you are. 
 
