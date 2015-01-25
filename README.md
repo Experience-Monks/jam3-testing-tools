@@ -129,9 +129,9 @@ Then our tests are run like so:
   }
 ```
 
-Now when we run `npm test` it will run the tests in a browser and print the result to the console. These solutions allow us to test the module in the cloud on a variety of browsers and operating systems, like [dom-css](https://github.com/mattdesl/dom-css) which uses SauceLabs for testing and Travis for continuous integration. 
+Now when we run `npm test` it will run the tests in a browser and print the result to the console. Eventually, these modules can be updated to run the tests in the cloud on a variety of browsers. An example is [dom-css](https://github.com/mattdesl/dom-css), which uses SauceLabs for testing and Travis for continuous integration. 
 
-You may also be interested in [testling](https://www.npmjs.com/package/testling) which has similar goals, except focuses more on PhantomJS (i.e. runs heedlessly but doesn't support full range of browser capabilities). 
+You may also be interested in [testling](https://www.npmjs.com/package/testling) which has similar goals, except focuses more on PhantomJS (i.e. runs heedlessly, but doesn't support full range of browser capabilities). 
 
 ## pretty-printing
 
@@ -162,5 +162,5 @@ For example, if we are using smokestack:
 ## alternatives
 
 - [wzrd](https://www.npmjs.com/package/wzrd) or [prova](https://www.npmjs.com/package/prova) can be used instead of `beefy`
-- [testling](https://www.npmjs.com/package/testling) can be used instead of `smokestack`
+- [testling](https://www.npmjs.com/package/testling) and [zuul](https://github.com/defunctzombie/zuul) can be used instead of `smokestack`
 - [a bunch of alternatives](https://github.com/substack/tape#pretty-reporters) to `faucet`
