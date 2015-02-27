@@ -161,6 +161,6 @@ For example, if we are using smokestack:
 
 ## alternatives
 
-- [wzrd](https://www.npmjs.com/package/wzrd) or [prova](https://www.npmjs.com/package/prova) can be used instead of `beefy`
+- [wzrd](https://www.npmjs.com/package/wzrd), [budo](https://www.npmjs.com/package/budo) or [prova](https://www.npmjs.com/package/prova) can be used instead of `beefy`
 - [testling](https://www.npmjs.com/package/testling) and [zuul](https://github.com/defunctzombie/zuul) can be used instead of `smokestack`
 - [a bunch of alternatives](https://github.com/substack/tape#pretty-reporters) to `faucet`
